@@ -357,7 +357,7 @@ export default function ArticleArchive() {
   })
 
   return (
-    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b from-purple-50 to-white">
+    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b  to-white mt-5">
       <div
         className={`flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8 ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
       >
@@ -448,7 +448,7 @@ export default function ArticleArchive() {
             </SheetContent>
           </Sheet>
           <div className="relative">
-            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+  
             <Input
               placeholder="Cari artikel..."
               className="pl-10 w-[200px] md:w-[300px] border-purple-200 focus:border-purple-400 focus:ring-purple-400"

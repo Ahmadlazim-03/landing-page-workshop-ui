@@ -186,7 +186,7 @@ export default function ArticleCalendar() {
   const years = [2021, 2022, 2023, 2024]
 
   return (
-    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b from-purple-50 to-white">
+    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b from-purple-50 to-white mt-5">
       <div
         className={`flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8 ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
       >

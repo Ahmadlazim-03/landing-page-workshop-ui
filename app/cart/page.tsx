@@ -55,12 +55,7 @@ export default function ShoppingCart() {
   const total = subtotal + shipping
 
   return (
-    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b from-purple-50 to-white">
-      <h1
-        className={`text-3xl font-bold mb-8 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
-      >
-        Keranjang Belanja
-      </h1>
+    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b to-white mt-5">
 
       {cartItems.length === 0 ? (
         <div
@@ -82,7 +77,7 @@ export default function ShoppingCart() {
             style={{ animationDelay: "0.1s" }}
           >
             <div className="bg-white rounded-lg shadow-md border border-purple-100 overflow-hidden">
-              <div className="overflow-x-auto">
+              <div className="overflow-x-auto mt-0">
                 <Table>
                   <TableHeader>
                     <TableRow className="bg-purple-50">
@@ -151,18 +146,18 @@ export default function ShoppingCart() {
                 </Table>
               </div>
 
-              <div className="flex justify-between p-4">
+              <div className="flex flex-col sm:flex-row justify-center sm:justify-between gap-4 p-4">
                 <Link href="/products">
                   <Button
                     variant="outline"
-                    className="border-purple-300 text-purple-600 hover:bg-purple-100 hover:text-purple-700 transition-all hover:scale-105"
+                    className="w-full min-h-[50px] border-purple-300 text-purple-600 hover:bg-purple-100 hover:text-purple-700 transition-all hover:scale-105 sm:w-auto"
                   >
                     Lanjutkan Belanja
                   </Button>
                 </Link>
                 <Button
                   variant="outline"
-                  className="border-purple-300 text-purple-600 hover:bg-purple-100 hover:text-purple-700 transition-all hover:scale-105"
+                  className="w-full min-h-[50px] border-purple-300 text-purple-600 hover:bg-purple-100 hover:text-purple-700 transition-all hover:scale-105 sm:w-auto"
                   onClick={() => {
                     // This would typically update quantities from a form
                     // For demo purposes, we'll just show an animation

@@ -17,6 +17,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
   const [quantity, setQuantity] = useState(1)
   const [selectedSize, setSelectedSize] = useState("M")
   const [selectedColor, setSelectedColor] = useState("Hitam")
+  const [isInWishlist, setIsInWishlist] = useState(false)
 
   useEffect(() => {
     setIsLoaded(true)
@@ -55,20 +56,23 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
 
   const handleAddToCart = () => {
     toast({
-      title: "Produk ditambahkan ke keranjang",
+      title: "Success: Produk ditambahkan ke keranjang",
       description: `${product.name} (${selectedColor}, ${selectedSize}) - ${quantity} item`,
+      variant: "default",
     })
   }
 
   const handleAddToWishlist = () => {
+    setIsInWishlist((prev) => !prev)
     toast({
-      title: "Produk ditambahkan ke wishlist",
-      description: `${product.name} telah ditambahkan ke wishlist Anda`,
+      title: `Success: ${isInWishlist ? "Produk dihapus dari" : "Produk ditambahkan ke"} wishlist`,
+      description: `${product.name} telah ${isInWishlist ? "dihapus dari" : "ditambahkan ke"} wishlist Anda`,
+      variant: "default",
     })
   }
 
   return (
-    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b from-purple-50 to-white">
+    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b to-white mt-[60px]">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
         {/* Product Images */}
         <div className={`space-y-4 ${isLoaded ? "animate-fade-in" : "opacity-0"}`} style={{ animationDelay: "0.1s" }}>
@@ -137,43 +141,44 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
           <p className="text-gray-600">{product.description}</p>
 
           <div className="space-y-4">
-            <div>
-              <h3 className="font-semibold mb-2 text-purple-900">Ukuran</h3>
-              <div className="flex gap-2">
-                {["S", "M", "L", "XL"].map((size) => (
-                  <Button
-                    key={size}
-                    variant="outline"
-                    className={`h-10 w-10 rounded-md p-0 transition-all ${
-                      selectedSize === size
-                        ? "bg-purple-100 border-purple-500 text-purple-700"
-                        : "border-purple-200 text-purple-700 hover:bg-purple-50"
-                    }`}
-                    onClick={() => setSelectedSize(size)}
-                  >
-                    {size}
-                  </Button>
-                ))}
+            <div className="flex flex-col gap-4 sm:flex-row sm:gap-6">
+              <div className="flex-1">
+                <h3 className="font-semibold mb-2 text-purple-900">Ukuran</h3>
+                <div className="flex gap-2">
+                  {["S", "M", "L", "XL"].map((size) => (
+                    <Button
+                      key={size}
+                      variant="outline"
+                      className={`h-10 w-10 rounded-md p-0 transition-all ${
+                        selectedSize === size
+                          ? "bg-purple-100 border-purple-500 text-purple-700"
+                          : "border-purple-200 text-purple-700 hover:bg-purple-50"
+                      }`}
+                      onClick={() => setSelectedSize(size)}
+                    >
+                      {size}
+                    </Button>
+                  ))}
+                </div>
               </div>
-            </div>
-
-            <div>
-              <h3 className="font-semibold mb-2 text-purple-900">Warna</h3>
-              <div className="flex gap-2">
-                {[
-                  { name: "Hitam", color: "bg-black" },
-                  { name: "Putih", color: "bg-white border" },
-                  { name: "Biru", color: "bg-blue-500" },
-                ].map((color) => (
-                  <div
-                    key={color.name}
-                    className={`h-10 w-10 rounded-full ${color.color} cursor-pointer transition-all ${
-                      selectedColor === color.name ? "ring-2 ring-purple-500 scale-110" : "hover:scale-105"
-                    }`}
-                    title={color.name}
-                    onClick={() => setSelectedColor(color.name)}
-                  />
-                ))}
+              <div className="flex-1">
+                <h3 className="font-semibold mb-2 text-purple-900">Warna</h3>
+                <div className="flex gap-2">
+                  {[
+                    { name: "Hitam", color: "bg-black" },
+                    { name: "Putih", color: "bg-white border" },
+                    { name: "Biru", color: "bg-blue-500" },
+                  ].map((color) => (
+                    <div
+                      key={color.name}
+                      className={`h-10 w-10 rounded-full ${color.color} cursor-pointer transition-all ${
+                        selectedColor === color.name ? "ring-2 ring-purple-500 scale-110" : "hover:scale-105"
+                      }`}
+                      title={color.name}
+                      onClick={() => setSelectedColor(color.name)}
+                    />
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -201,9 +206,9 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
             </div>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col gap-4 sm:flex-row">
             <Button
-              className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all hover:scale-105"
+              className="w-full min-h-[50px] bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 transition-all hover:scale-105 sm:flex-1 sm:min-h-[48px]"
               size="lg"
               onClick={handleAddToCart}
             >
@@ -213,16 +218,16 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
             <Button
               variant="outline"
               size="lg"
-              className="border-purple-300 text-purple-600 hover:bg-purple-100 hover:text-purple-700 transition-all hover:scale-105"
+              className={`w-full min-h-[50px] ${isInWishlist ? "bg-purple-100 border-purple-500 text-purple-700" : "border-purple-300 text-purple-600 hover:bg-purple-100 hover:text-purple-700"} transition-all hover:scale-105 sm:w-auto sm:min-h-[48px]`}
               onClick={handleAddToWishlist}
             >
-              <Heart className="mr-2 h-5 w-5" />
+              <Heart className={`mr-2 h-5 w-5 ${isInWishlist ? "fill-purple-500" : ""}`} />
               Wishlist
             </Button>
             <Button
               variant="outline"
               size="icon"
-              className="h-10 w-10 border-purple-300 text-purple-600 hover:bg-purple-100 hover:text-purple-700 transition-all hover:scale-105"
+              className="w-12 h-12 border-purple-300 text-purple-600 hover:bg-purple-100 hover:text-purple-700 transition-all hover:scale-105 sm:w-10 sm:h-10"
               onClick={() => {
                 navigator.clipboard.writeText(window.location.href)
                 toast({
@@ -276,7 +281,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
         </TabsContent>
         <TabsContent value="specifications" className="pt-4 animate-fade-in">
           <div className="space-y-4 bg-white p-6 rounded-lg shadow-sm border border-purple-100">
-            <h3 className="text-lg font-semibold text-purple-900">Spesifikasi Produk</h3>
+            <h3 className="text-lg font-semibold text-purple-700">Spesifikasi Produk</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {Object.entries(product.specifications).map(([key, value]) => (
                 <div key={key} className="flex border-b border-purple-100 pb-2">

@@ -47,14 +47,14 @@ export default function ArticleDetail({ params }: { params: { id: string } }) {
   }))
 
   return (
-    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b from-purple-50 to-white">
+    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b  to-white mt-5">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div
           className={`lg:col-span-2 ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
           style={{ animationDelay: "0.1s" }}
         >
           <div className="mb-6">
-            <div className="flex items-center gap-2 mb-4">
+            <div className="flex items-center gap-2 mb-4 mt-3">
               <span className="text-sm bg-secondary/10 text-secondary px-3 py-1 rounded-full">{article.category}</span>
             </div>
             <h1 className="text-3xl md:text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">

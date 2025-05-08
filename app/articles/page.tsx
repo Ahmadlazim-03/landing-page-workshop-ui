@@ -118,17 +118,21 @@ export default function ArticleArchive() {
   })
 
   return (
-    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b from-purple-50 to-white">
+    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b to-white mt-5">
       <div
         className={`flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8 ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
       >
         <div>
-          <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
-            Artikel
-          </h1>
           <p className="text-gray-500 mt-1">Temukan informasi terbaru dan tips berguna</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4">
+          <Link href="/articles/archive">
+            <Button
+              className="w-full sm:w-auto bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white transition-all hover:scale-105"
+            >
+              Arsip Artikel
+            </Button>
+          </Link>
           <Input
             placeholder="Cari artikel..."
             className="w-full sm:w-[250px] border-purple-200 focus:border-purple-400 focus:ring-purple-400"
@@ -178,9 +182,9 @@ export default function ArticleArchive() {
                   </div>
                   <h3 className="font-semibold text-lg text-purple-900">{article.title}</h3>
                   <p className="text-sm text-gray-500 mt-2 flex-grow line-clamp-3">{article.excerpt}</p>
-                  <div className="flex items-center mt-4 text-sm text-gray-500">
+                  <div className="flex items-center justify-between mt-auto pt-3 text-xs text-gray-400">
                     <span>{article.date}</span>
-                    <span className="mx-2">•</span>
+                    <span className="mx-1">•</span>
                     <span>{article.readTime}</span>
                   </div>
                 </CardContent>
@@ -191,7 +195,7 @@ export default function ArticleArchive() {
       )}
 
       <div className="flex justify-center mt-12">
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 lg:mb-4">
           <Button variant="outline" size="icon" disabled className="border-purple-300 text-purple-400">
             &lt;
           </Button>
