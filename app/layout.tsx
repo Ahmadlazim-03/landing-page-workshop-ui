@@ -5,12 +5,13 @@ import Script from "next/script"
 import "./globals.css"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+// import FooterClientConditional from "@/components/footer-client-conditional"
 
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Modern E-commerce & Blog",
+  title: "Workshop UI Ahmad Lazim",
   description: "Temukan produk berkualitas dan artikel informatif",
   generator: "v0.dev",
 }

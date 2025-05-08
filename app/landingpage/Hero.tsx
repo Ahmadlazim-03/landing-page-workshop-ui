@@ -27,7 +27,7 @@ export default function Hero() {
                 <Link href="/products" className="btn btn-primary me-0 me-sm-2 mx-1">
                   Lihat Produk
                 </Link>
-                <a href="https://www.youtube.com/watch?v=Y7f98aduVJ8" className="btn btn-link mt-2 mt-sm-0 glightbox">
+                <a className="btn btn-link mt-2 mt-sm-0 glightbox">
                   <i className="bi bi-play-circle me-1"></i>
                   Lihat Video
                 </a>
