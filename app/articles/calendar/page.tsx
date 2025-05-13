@@ -30,7 +30,7 @@ export default function ArticleCalendar() {
       month: 4, // May (0-indexed)
       year: 2023,
       category: "Gaya Hidup",
-      image: "/placeholder.svg?height=200&width=400&text=Fashion+Trends",
+      image: "/artikel/logo1.png",
     },
     {
       id: 2,
@@ -41,7 +41,7 @@ export default function ArticleCalendar() {
       month: 4, // May (0-indexed)
       year: 2023,
       category: "Teknologi",
-      image: "/placeholder.svg?height=200&width=400&text=Gadget+Review",
+      image: "/artikel/logo2.png",
     },
     {
       id: 3,
@@ -52,7 +52,7 @@ export default function ArticleCalendar() {
       month: 4, // May (0-indexed)
       year: 2023,
       category: "Kesehatan",
-      image: "/placeholder.svg?height=200&width=400&text=Health+Tips",
+      image: "/artikel/logo3.png",
     },
     {
       id: 4,
@@ -63,7 +63,7 @@ export default function ArticleCalendar() {
       month: 4, // May (0-indexed)
       year: 2023,
       category: "Teknologi",
-      image: "/placeholder.svg?height=200&width=400&text=Laptop+Guide",
+      image: "/artikel/logo4.png",
     },
     {
       id: 5,
@@ -74,7 +74,7 @@ export default function ArticleCalendar() {
       month: 4, // May (0-indexed)
       year: 2023,
       category: "Kesehatan",
-      image: "/placeholder.svg?height=200&width=400&text=Healthy+Recipes",
+      image: "/artikel/logo5.png",
     },
     {
       id: 6,
@@ -85,7 +85,7 @@ export default function ArticleCalendar() {
       month: 4, // May (0-indexed)
       year: 2023,
       category: "Gaya Hidup",
-      image: "/placeholder.svg?height=200&width=400&text=Home+Decor",
+      image: "/artikel/logo6.png",
     },
     {
       id: 7,
@@ -96,7 +96,7 @@ export default function ArticleCalendar() {
       month: 4, // May (0-indexed)
       year: 2023,
       category: "Gaya Hidup",
-      image: "/placeholder.svg?height=200&width=400&text=Finance+Tips",
+      image: "/artikel/logo7.png",
     },
     {
       id: 8,
@@ -107,7 +107,7 @@ export default function ArticleCalendar() {
       month: 3, // April (0-indexed)
       year: 2023,
       category: "Teknologi",
-      image: "/placeholder.svg?height=200&width=400&text=Smartphone+Comparison",
+      image: "/artikel/logo8.png",
     },
     {
       id: 9,
@@ -118,7 +118,7 @@ export default function ArticleCalendar() {
       month: 3, // April (0-indexed)
       year: 2023,
       category: "Kesehatan",
-      image: "/placeholder.svg?height=200&width=400&text=Heart+Health",
+      image: "/artikel/logo9.png",
     },
   ]
 
@@ -186,9 +186,11 @@ export default function ArticleCalendar() {
   const years = [2021, 2022, 2023, 2024]
 
   return (
-    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b from-purple-50 to-white mt-5">
+    <div className="container px-4 py-8 md:py-12 bg-gradient-to-b to-white mt-5">
       <div
-        className={`flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8 ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
+        className={`flex flex-col gap-4 md:flex-row md:items-center md:justify-between mb-8 ${
+          isLoaded ? "animate-fade-in" : "opacity-0"
+        }`}
       >
         <div>
           <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
@@ -198,12 +200,18 @@ export default function ArticleCalendar() {
         </div>
         <div className="flex items-center gap-4">
           <Link href="/articles/archive">
-            <Button variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-100">
+            <Button
+              variant="outline"
+              className="border-purple-300 text-purple-600 hover:bg-purple-100"
+            >
               Lihat Arsip
             </Button>
           </Link>
           <Link href="/articles">
-            <Button variant="outline" className="border-purple-300 text-purple-600 hover:bg-purple-100">
+            <Button
+              variant="outline"
+              className="border-purple-300 text-purple-600 hover:bg-purple-100"
+            >
               Lihat Semua Artikel
             </Button>
           </Link>
@@ -212,20 +220,22 @@ export default function ArticleCalendar() {
 
       {/* Calendar Header */}
       <div
-        className={`bg-white p-6 rounded-lg shadow-md border border-purple-100 mb-8 ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
+        className={`bg-white p-3 md:p-6 rounded-lg shadow-md border border-purple-100 mb-8 ${
+          isLoaded ? "animate-fade-in" : "opacity-0"
+        }`}
         style={{ animationDelay: "0.2s" }}
       >
-        <div className="flex justify-between items-center mb-6">
-          <div className="flex items-center gap-4">
+        <div className="flex flex-col md:flex-row justify-between items-center mb-3 md:mb-6 gap-2 md:gap-0">
+          <div className="flex items-center gap-2 md:gap-4">
             <Button
               variant="outline"
               size="icon"
               className="border-purple-300 text-purple-600 hover:bg-purple-100"
               onClick={prevMonth}
             >
-              <ChevronLeft className="h-5 w-5" />
+              <ChevronLeft className="h-4 w-4 md:h-5 md:w-5" />
             </Button>
-            <h2 className="text-xl font-bold text-purple-900">
+            <h2 className="text-lg md:text-xl font-bold text-purple-900">
               {monthNames[currentMonth]} {currentYear}
             </h2>
             <Button
@@ -234,12 +244,15 @@ export default function ArticleCalendar() {
               className="border-purple-300 text-purple-600 hover:bg-purple-100"
               onClick={nextMonth}
             >
-              <ChevronRight className="h-5 w-5" />
+              <ChevronRight className="h-4 w-4 md:h-5 md:w-5" />
             </Button>
           </div>
-          <div className="flex items-center gap-2">
-            <Select value={currentMonth.toString()} onValueChange={(value) => setCurrentMonth(Number.parseInt(value))}>
-              <SelectTrigger className="w-[150px] border-purple-200">
+          <div className="flex flex-col md:flex-row items-center gap-2 w-full md:w-auto mt-2 md:mt-0">
+            <Select
+              value={currentMonth.toString()}
+              onValueChange={(value) => setCurrentMonth(Number.parseInt(value))}
+            >
+              <SelectTrigger className="w-full md:w-[150px] border-purple-200">
                 <SelectValue placeholder="Pilih bulan" />
               </SelectTrigger>
               <SelectContent>
@@ -250,8 +263,11 @@ export default function ArticleCalendar() {
                 ))}
               </SelectContent>
             </Select>
-            <Select value={currentYear.toString()} onValueChange={(value) => setCurrentYear(Number.parseInt(value))}>
-              <SelectTrigger className="w-[100px] border-purple-200">
+            <Select
+              value={currentYear.toString()}
+              onValueChange={(value) => setCurrentYear(Number.parseInt(value))}
+            >
+              <SelectTrigger className="w-full md:w-[100px] border-purple-200 mt-2 md:mt-0">
                 <SelectValue placeholder="Pilih tahun" />
               </SelectTrigger>
               <SelectContent>
@@ -266,17 +282,20 @@ export default function ArticleCalendar() {
         </div>
 
         {/* Calendar Grid */}
-        <div className="grid grid-cols-7 gap-2">
+        <div className="grid grid-cols-7 md:grid-cols-7 gap-1 md:gap-2">
           {/* Day names */}
           {["Min", "Sen", "Sel", "Rab", "Kam", "Jum", "Sab"].map((day) => (
-            <div key={day} className="text-center font-medium text-purple-900 py-2">
+            <div
+              key={day}
+              className="text-center font-medium text-purple-900 py-1 md:py-2 text-xs md:text-base"
+            >
               {day}
             </div>
           ))}
 
           {/* Empty cells for days before the first day of the month */}
           {Array.from({ length: firstDayOfMonth }).map((_, index) => (
-            <div key={`empty-${index}`} className="h-24 bg-gray-50 rounded-lg"></div>
+            <div key={`empty-${index}`} className="h-16 md:h-24 bg-gray-50 rounded-lg"></div>
           ))}
 
           {/* Calendar days */}
@@ -286,9 +305,9 @@ export default function ArticleCalendar() {
             return (
               <div
                 key={`day-${day}`}
-                className={`h-24 p-2 rounded-lg border ${
+                className={`h-16 md:h-24 p-1 md:p-2 rounded-lg border ${
                   hasArticles ? "border-purple-200 bg-purple-50" : "border-gray-100"
-                } overflow-y-auto`}
+                } overflow-y-auto text-xs md:text-sm`}
               >
                 <div className="text-right font-medium text-gray-700 mb-1">{day}</div>
                 {hasArticles && (
@@ -309,7 +328,10 @@ export default function ArticleCalendar() {
       </div>
 
       {/* Articles for Selected Month */}
-      <div className={`space-y-6 ${isLoaded ? "animate-fade-in" : "opacity-0"}`} style={{ animationDelay: "0.3s" }}>
+      <div
+        className={`space-y-6 ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
+        style={{ animationDelay: "0.3s" }}
+      >
         <h2 className="text-xl font-bold text-purple-900">
           Artikel di {monthNames[currentMonth]} {currentYear}
         </h2>
@@ -325,7 +347,9 @@ export default function ArticleCalendar() {
             {filteredArticles.map((article, i) => (
               <Link href={`/articles/${article.id}`} key={article.id}>
                 <Card
-                  className={`overflow-hidden transition-all hover-lift ${isLoaded ? "animate-fade-in" : "opacity-0"}`}
+                  className={`overflow-hidden transition-all hover-lift ${
+                    isLoaded ? "animate-fade-in" : "opacity-0"
+                  }`}
                   style={{ animationDelay: `${0.4 + i * 0.05}s` }}
                 >
                   <div className="relative aspect-video overflow-hidden group">
@@ -333,7 +357,7 @@ export default function ArticleCalendar() {
                       alt={article.title}
                       className="object-cover transition-transform duration-500 group-hover:scale-110"
                       fill
-                      src={article.image || "/placeholder.svg"}
+                      src={article.image || "/artikel/logo1.png"}
                     />
                     <div className="absolute top-2 right-2">
                       <Badge className="bg-secondary hover:bg-secondary/90">{article.category}</Badge>

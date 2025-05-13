@@ -28,7 +28,7 @@ export default function ProductCatalog() {
       description: "Smartphone canggih dengan kamera 108MP dan baterai tahan lama",
       price: 8999000,
       category: "Elektronik",
-      image: "/placeholder.svg?height=300&width=300&text=Smartphone",
+      image: "/elektronik/smartphone.png",
     },
     {
       id: 2,
@@ -36,7 +36,7 @@ export default function ProductCatalog() {
       description: "Sepatu sneakers nyaman dengan desain modern dan stylish",
       price: 1299000,
       category: "Fashion",
-      image: "/placeholder.svg?height=300&width=300&text=Sneakers",
+      image: "/fashion/sneakers.png",
     },
     {
       id: 3,
@@ -44,7 +44,7 @@ export default function ProductCatalog() {
       description: "Jam tangan pintar dengan fitur kesehatan dan notifikasi",
       price: 2499000,
       category: "Elektronik",
-      image: "/placeholder.svg?height=300&width=300&text=Smartwatch",
+      image: "/elektronik/smartwatch.png",
     },
     {
       id: 4,
@@ -52,7 +52,7 @@ export default function ProductCatalog() {
       description: "Headphone nirkabel dengan noise cancelling dan suara premium",
       price: 1899000,
       category: "Elektronik",
-      image: "/placeholder.svg?height=300&width=300&text=Headphone",
+      image: "/elektronik/headphone.png",
     },
     {
       id: 5,
@@ -60,7 +60,7 @@ export default function ProductCatalog() {
       description: "Blender dengan berbagai fungsi untuk kebutuhan dapur Anda",
       price: 899000,
       category: "Rumah Tangga",
-      image: "/placeholder.svg?height=300&width=300&text=Blender",
+      image: "/rumahtangga/blender.png",
     },
     {
       id: 6,
@@ -68,7 +68,7 @@ export default function ProductCatalog() {
       description: "Kemeja formal dengan bahan premium untuk acara penting",
       price: 599000,
       category: "Fashion",
-      image: "/placeholder.svg?height=300&width=300&text=Kemeja",
+      image: "/fashion/kemeja.png",
     },
     {
       id: 7,
@@ -76,7 +76,7 @@ export default function ProductCatalog() {
       description: "Suplemen vitamin untuk menjaga kesehatan tubuh setiap hari",
       price: 299000,
       category: "Kesehatan",
-      image: "/placeholder.svg?height=300&width=300&text=Vitamin",
+      image: "/kesehatan/vitamin.png",
     },
     {
       id: 8,
@@ -84,7 +84,7 @@ export default function ProductCatalog() {
       description: "Laptop tipis dan ringan dengan performa tinggi",
       price: 12999000,
       category: "Elektronik",
-      image: "/placeholder.svg?height=300&width=300&text=Laptop",
+      image: "/elektronik/laptop.png",
     },
     {
       id: 9,
@@ -92,7 +92,7 @@ export default function ProductCatalog() {
       description: "Kursi dengan desain ergonomis untuk kenyamanan bekerja",
       price: 1999000,
       category: "Rumah Tangga",
-      image: "/placeholder.svg?height=300&width=300&text=Kursi",
+      image: "/rumahtangga/kursi.png",
     },
     {
       id: 10,
@@ -100,7 +100,7 @@ export default function ProductCatalog() {
       description: "Tas ransel multifungsi untuk kegiatan sehari-hari",
       price: 799000,
       category: "Fashion",
-      image: "/placeholder.svg?height=300&width=300&text=Ransel",
+      image: "/fashion/tasransel.png",
     },
     {
       id: 11,
@@ -108,7 +108,7 @@ export default function ProductCatalog() {
       description: "Alat untuk memantau tekanan darah dengan akurat",
       price: 499000,
       category: "Kesehatan",
-      image: "/placeholder.svg?height=300&width=300&text=Tensimeter",
+      image: "/kesehatan/alat.png",
     },
     {
       id: 12,
@@ -116,7 +116,7 @@ export default function ProductCatalog() {
       description: "Set panci dengan kualitas premium untuk memasak",
       price: 2499000,
       category: "Rumah Tangga",
-      image: "/placeholder.svg?height=300&width=300&text=Panci",
+      image: "/rumahtangga/panci.png",
     },
   ]
 

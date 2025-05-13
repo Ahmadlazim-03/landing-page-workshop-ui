@@ -28,21 +28,21 @@ export default function Checkout() {
       name: "Smartphone Premium",
       price: 8999000,
       quantity: 1,
-      image: "/placeholder.svg?height=100&width=100&text=Smartphone",
+      image: "/elektronik/smartphone.png",
     },
     {
       id: 2,
       name: "Sneakers Modern",
       price: 1299000,
       quantity: 2,
-      image: "/placeholder.svg?height=100&width=100&text=Sneakers",
+      image: "/fashion/sneakers.png",
     },
     {
       id: 3,
       name: "Smart Watch",
       price: 2499000,
       quantity: 1,
-      image: "/placeholder.svg?height=100&width=100&text=Smartwatch",
+      image: "/elektronik/smartwatch.png",
     },
   ]
 

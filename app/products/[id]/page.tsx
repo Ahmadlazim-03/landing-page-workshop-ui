@@ -32,10 +32,10 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     rating: 4.5,
     reviews: 120,
     images: [
-      `/placeholder.svg?height=600&width=600&text=Produk+${productId}`,
-      `/placeholder.svg?height=600&width=600&text=Produk+${productId}+View+2`,
-      `/placeholder.svg?height=600&width=600&text=Produk+${productId}+View+3`,
-      `/placeholder.svg?height=600&width=600&text=Produk+${productId}+View+4`,
+      `/rumahtangga/kursi.png`,
+      `/elektronik/laptop.png`,
+      `/kesehatan/alat.png`,
+      `/fashion/sneakers.png`,
     ],
     features: ["Bahan berkualitas tinggi", "Desain modern dan elegan", "Nyaman digunakan", "Tahan lama"],
     specifications: {
@@ -51,7 +51,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
     id: Number(productId) + i + 1,
     name: `Produk ${Number(productId) + i + 1}`,
     price: 299000 + i * 10000,
-    image: `/placeholder.svg?height=300&width=300&text=Produk+${Number(productId) + i + 1}`,
+    image: `/rumahtangga/kursi.png`,
   }))
 
   const handleAddToCart = () => {
@@ -338,7 +338,7 @@ export default function ProductDetail({ params }: { params: { id: string } }) {
                     alt={product.name}
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                     fill
-                    src={product.image || "/placeholder.svg"}
+                    src={product.image || "/rumahtangga/kursi.png"}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
                     <div className="p-4 w-full">

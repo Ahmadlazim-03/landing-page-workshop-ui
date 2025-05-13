@@ -28,7 +28,7 @@ export default function ArticleArchive() {
       date: "15 Mei 2023",
       readTime: "5 menit membaca",
       category: "Gaya Hidup",
-      image: "/placeholder.svg?height=200&width=400&text=Fashion+Trends",
+      image: "/artikel/logo1.png",
     },
     {
       id: 2,
@@ -37,7 +37,7 @@ export default function ArticleArchive() {
       date: "12 Mei 2023",
       readTime: "7 menit membaca",
       category: "Teknologi",
-      image: "/placeholder.svg?height=200&width=400&text=Gadget+Review",
+      image: "/artikel/logo2.png",
     },
     {
       id: 3,
@@ -46,7 +46,7 @@ export default function ArticleArchive() {
       date: "10 Mei 2023",
       readTime: "6 menit membaca",
       category: "Kesehatan",
-      image: "/placeholder.svg?height=200&width=400&text=Health+Tips",
+      image: "/artikel/logo3.png",
     },
     {
       id: 4,
@@ -55,7 +55,7 @@ export default function ArticleArchive() {
       date: "8 Mei 2023",
       readTime: "8 menit membaca",
       category: "Teknologi",
-      image: "/placeholder.svg?height=200&width=400&text=Laptop+Guide",
+      image: "/artikel/logo4.png",
     },
     {
       id: 5,
@@ -64,7 +64,7 @@ export default function ArticleArchive() {
       date: "5 Mei 2023",
       readTime: "4 menit membaca",
       category: "Kesehatan",
-      image: "/placeholder.svg?height=200&width=400&text=Healthy+Recipes",
+      image: "/artikel/logo5.png",
     },
     {
       id: 6,
@@ -73,7 +73,7 @@ export default function ArticleArchive() {
       date: "3 Mei 2023",
       readTime: "5 menit membaca",
       category: "Gaya Hidup",
-      image: "/placeholder.svg?height=200&width=400&text=Home+Decor",
+      image: "/artikel/logo6.png",
     },
     {
       id: 7,
@@ -82,7 +82,7 @@ export default function ArticleArchive() {
       date: "1 Mei 2023",
       readTime: "6 menit membaca",
       category: "Gaya Hidup",
-      image: "/placeholder.svg?height=200&width=400&text=Finance+Tips",
+      image: "/artikel/logo7.png",
     },
     {
       id: 8,
@@ -91,7 +91,7 @@ export default function ArticleArchive() {
       date: "28 April 2023",
       readTime: "9 menit membaca",
       category: "Teknologi",
-      image: "/placeholder.svg?height=200&width=400&text=Smartphone+Comparison",
+      image: "/artikel/logo8.png",
     },
     {
       id: 9,
@@ -100,7 +100,7 @@ export default function ArticleArchive() {
       date: "25 April 2023",
       readTime: "5 menit membaca",
       category: "Kesehatan",
-      image: "/placeholder.svg?height=200&width=400&text=Heart+Health",
+      image: "/artikel/logo9.png",
     },
   ]
 
@@ -171,7 +171,7 @@ export default function ArticleArchive() {
                     alt={article.title}
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                     fill
-                    src={article.image || "/placeholder.svg"}
+                    src={article.image || "/artikel/logo1.png"}
                   />
                 </div>
                 <CardContent className="p-4 bg-gradient-to-br from-white to-purple-50 flex flex-col h-[calc(100%-200px)]">
@@ -182,7 +182,7 @@ export default function ArticleArchive() {
                   </div>
                   <h3 className="font-semibold text-lg text-purple-900">{article.title}</h3>
                   <p className="text-sm text-gray-500 mt-2 flex-grow line-clamp-3">{article.excerpt}</p>
-                  <div className="flex items-center justify-between mt-auto pt-3 text-xs text-gray-400">
+                  <div className="flex items-center justify-between mt-auto pt-3 text-xs text-gray-400 mb-2">
                     <span>{article.date}</span>
                     <span className="mx-1">•</span>
                     <span>{article.readTime}</span>

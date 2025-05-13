@@ -32,7 +32,7 @@ export default function ArticleDetail({ params }: { params: { id: string } }) {
     readTime: "5 menit membaca",
     author: "John Doe",
     category: "Gaya Hidup",
-    image: `/placeholder.svg?height=400&width=800&text=Artikel+${articleId}`,
+    image: `/artikel/logo1.png`,
     tags: ["Lifestyle", "Fashion", "Trend"],
   }
 
@@ -43,7 +43,7 @@ export default function ArticleDetail({ params }: { params: { id: string } }) {
     excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, diam quis aliquam tincidunt.",
     date: "14 Mei 2023",
     readTime: "4 menit membaca",
-    image: `/placeholder.svg?height=200&width=400&text=Artikel+${Number(articleId) + i + 1}`,
+   image: `/artikel/logo${Number(articleId) + i + 1}.png`
   }))
 
   return (

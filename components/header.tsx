@@ -2,13 +2,18 @@
 
 import { useState } from "react"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 export default function Header() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false)
+  const pathname = usePathname() // Get the current route
 
   const toggleMobileNav = () => {
     setIsMobileNavOpen(!isMobileNavOpen)
   }
+
+  // Function to determine if a menu item is active
+  const isActive = (href: string) => pathname === href
 
   return (
     <header id="header" className="header d-flex align-items-center fixed-top">
@@ -20,18 +25,29 @@ export default function Header() {
         <nav id="navmenu" className={`navmenu ${isMobileNavOpen ? "mobile-nav-active" : ""}`}>
           <ul>
             <li>
-              <Link href="#hero" className="active">
+              <Link href="/" className={isActive("/") ? "active" : ""}>
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/products">Produk</Link>
+              <Link href="/products" className={isActive("/products") ? "active" : ""}>
+                Produk
+              </Link>
             </li>
             <li>
-              <Link href="/articles">Artikel</Link>
+              <Link href="/articles" className={isActive("/articles") ? "active" : ""}>
+                Artikel
+              </Link>
             </li>
             <li>
-              <Link href="/">Contact</Link>
+              <Link href="/articles/calendar" className={isActive("/articles/calendar") ? "active" : ""}>
+                Calender
+              </Link>
+            </li>
+             <li>
+              <Link href="https://dashboard-admin-workshop-ui.vercel.app/dashboard">
+                Dashboard
+              </Link>
             </li>
             {/* Cart icon for mobile menu */}
             <li className="cart-mobile d-xl-none">
